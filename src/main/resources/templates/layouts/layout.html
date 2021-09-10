@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" th:fragment="layout (content)" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <body>
+        <div th:replace="fragments/header"> This header content is going to be replaced.</div>
+        <div>
+            <div>
+                <div >
+                    <h1>This is the Layout's main section</h1>
+                    <p>This content will be replaced if the page
+                        using the layout also defines a layout:fragment="content" segment. </p>
+                </div>
+            </div>
+        </div>
+
+        <div th:replace="${content}"></div>
+
+        <footer th:replace="fragments/footer">
+            This content will remain, but other content will be inserted after it.
+        </footer>
+    </body>
+</html>
