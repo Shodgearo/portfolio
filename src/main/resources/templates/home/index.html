@@ -4,40 +4,26 @@
         <meta charset="utf-8">
     </head>
     <body>
-        <section class="section is-medium">
+        <section class="section is-large" style="width: 100vw; height: 100vh;">
             <h1 class="title">Hello there!</h1>
             <h2 class="subtitle">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
             </h2>
         </section>
-        <section class="section is-medium">
+        <section class="section">
             <div class="container">
                 <template>
-                    <b-carousel
-                            :autoplay="false"
-                            with-carousel-list
-                            :indicator="false"
-                            :overlay="gallery"
-                            @click="switchGallery(true)">
-                        <b-carousel-item v-for="(item, i) in items" :key="i">
-                            <figure class="image">
-                                <img :src="item.image" alt="">
-                            </figure>
+                    <b-carousel :pause-info="false">
+                        <b-carousel-item v-for="(carousel, i) in carousels" :key="i">
+                            <section :class="`hero is-medium is-${carousel.color}`">
+                                <div class="hero-body has-text-centered">
+                                    <figure class="image">
+                                        <h1 class="title">{{carousel.text}}</h1>
+                                        <img :src="carousel.image">
+                                    </figure>
+                                </div>
+                            </section>
                         </b-carousel-item>
-                        <span v-if="gallery" @click="switchGallery(false)" class="modal-close is-large"></span>
-                        <template #list="props">
-                            <b-carousel-list
-                                    v-model="props.active"
-                                    :data="items"
-                                    v-bind="al"
-                                    @switch="props.switch($event, false)"
-                                    as-indicator></b-carousel-list>
-                        </template>
-                        <template #overlay>
-                            <div class="has-text-centered has-text-white">
-                                Мои проекты
-                            </div>
-                        </template>
                     </b-carousel>
                 </template>
             </div>
