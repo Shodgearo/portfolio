@@ -1,0 +1,37 @@
+/*@keyframes rotate_cog {*/
+/*    from {*/
+/*        transform: rotate(0deg);*/
+/*    }*/
+/*    to {*/
+/*        transform: rotate(90deg);*/
+/*    }*/
+/*}*/
+
+.cog1.active {
+    transform: rotate(90deg);
+}
+
+.cog2.active {
+    transform: rotate(0deg);
+}
+
+.cog1, .cog2 {
+    transition: 500ms ease-in-out;
+    position: fixed;
+}
+
+.cog1 {
+    width: 140px;
+    height: 140px;
+    top: -60px;
+    right: -60px;
+    transform: rotate(0deg);
+}
+
+.cog2 {
+    width: 100px;
+    height: 100px;
+    top: 30px;
+    right: 40px;
+    transform: rotate(90deg);
+}

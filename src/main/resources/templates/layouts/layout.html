@@ -6,33 +6,29 @@
         <link rel="stylesheet" href="https://unpkg.com/buefy/dist/buefy.min.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@5.8.55/css/materialdesignicons.min.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
+        <link rel="stylesheet" href="css/cog1.css">
         <title>Langolier</title>
     </head>
     <body>
         <div id="app">
             <div th:replace="fragments/header"></div>
+            <img id="cog1" class="cog1" src="img/cog1.png" alt="">
+            <img id="cog2" class="cog2" src="img/cog1.png" alt="">
             <div th:replace="${content}"></div>
             <div th:replace="fragments/footer"></div>
         </div>
 
+        <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
         <script src="js/vue.js"></script>
         <script src="https://unpkg.com/buefy/dist/buefy.min.js"></script>
 
+        <script src="js/main.js"></script>
+
         <script>
-            new Vue({
-                el: '#app',
-                data(){
-                    return {
-                        carousels: [
-                            { text: 'Slide 1', image: 'https://picsum.photos/id/0/1230/500' },
-                            { text: 'Slide 2', color: 'info' },
-                            { text: 'Slide 3', color: 'success' },
-                            { text: 'Slide 4', color: 'warning' },
-                            { text: 'Slide 5', color: 'danger' }
-                        ]
-                    }
-                }
-            })
+            $(window).scroll(function () {
+                $('#cog1').toggleClass("active");
+                $('#cog2').toggleClass("active");
+            });
         </script>
     </body>
 </html>
