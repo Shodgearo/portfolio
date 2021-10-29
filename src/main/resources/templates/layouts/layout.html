@@ -12,8 +12,6 @@
     <body>
         <div id="app">
             <div th:replace="fragments/header"></div>
-            <img id="cog1" class="cog1" src="img/cog1.png" alt="">
-            <img id="cog2" class="cog2" src="img/cog1.png" alt="">
             <div th:replace="${content}"></div>
             <div th:replace="fragments/footer"></div>
         </div>
@@ -23,12 +21,5 @@
         <script src="https://unpkg.com/buefy/dist/buefy.min.js"></script>
 
         <script src="js/main.js"></script>
-
-        <script>
-            $(window).scroll(function () {
-                $('#cog1').toggleClass("active");
-                $('#cog2').toggleClass("active");
-            });
-        </script>
     </body>
 </html>
