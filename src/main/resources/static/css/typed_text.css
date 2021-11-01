@@ -3,7 +3,7 @@
     /*This part is important for centering*/
     display: flex;
     align-items: center;
-    justify-content: center;
+    /*justify-content: center;*/
 }
 
 @media all and (max-width: 500px) {
