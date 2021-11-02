@@ -1,0 +1,40 @@
+.wrapper {
+    /*height: 100vh;*/
+    /*This part is important for centering*/
+    display: flex;
+    align-items: center;
+    /*justify-content: center;*/
+}
+
+@media all and (max-width: 500px) {
+    .typing-demo {
+        font-size: 0.76em;
+    }
+}
+
+@media all and (min-width: 900px) {
+    .typing-demo {
+        font-size: 1.6em;
+    }
+}
+
+.typing-demo {
+    width: 42ch;
+    animation: typing 4s steps(55), blink .5s step-end infinite alternate;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid;
+    font-family: monospace;
+}
+
+@keyframes typing {
+    from {
+        width: 0
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent
+    }
+}

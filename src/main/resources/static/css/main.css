@@ -1,0 +1,16 @@
+body {
+    overflow-x: hidden;
+    background-image: url("/img/bg4.svg");
+    /*background-position: center;*/
+    background-repeat: no-repeat;
+    background-size: cover;
+    /*background-image: linear-gradient(rgba(121, 87, 213, 0.6),rgba(255, 255, 255, 0.6)), url("/img/cool-bg.png");*/
+}
+
+.subtitle, .title {
+    color: black;
+}
+
+.footer {
+    background: rgba(0, 0, 0, 0);
+}
