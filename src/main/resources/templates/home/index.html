@@ -45,11 +45,10 @@
                 <template>
                     <b-carousel :pause-info="false">
                         <b-carousel-item v-for="(carousel, i) in carousels" :key="i">
-                            <section :class="`hero is-medium is-${carousel.color}`">
+                            <section class="hero is-medium" :style="`background-image: url(${carousel.image})`">
                                 <div class="hero-body has-text-centered">
                                     <figure class="image">
                                         <h1 class="title">{{carousel.text}}</h1>
-                                        <img :src="carousel.image">
                                     </figure>
                                 </div>
                             </section>
