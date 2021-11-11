@@ -3,6 +3,7 @@ new Vue({
     el: '#app',
     data(){
         return {
+            isActive: true,
             carousels: [
                 { text: 'Slide 1', image: 'https://picsum.photos/id/0/1230/500' },
                 { text: 'Slide 2', color: 'info' },

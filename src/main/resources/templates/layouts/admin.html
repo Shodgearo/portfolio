@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" th:fragment="layout (content)" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://unpkg.com/buefy/dist/buefy.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@5.8.55/css/materialdesignicons.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
+        <link rel="stylesheet" href="css/typed_text.css">
+        <link rel="stylesheet" href="css/admin.css">
+      <title>Admin</title>
+    </head>
+    <body>
+        <div id="app">
+            <template>
+                <b-menu>
+                    <b-menu-list label="Menu">
+                        <b-menu-item icon="information-outline" label="Info"></b-menu-item>
+                        <b-menu-item icon="settings" :active="isActive" expanded>
+                            <template #label="props">
+                                Administrator
+                                <b-icon class="is-pulled-right" :icon="props.expanded ? 'menu-up' : 'menu-down'"></b-icon>
+                            </template>
+                            <b-menu-item icon="account" label="Users"></b-menu-item>
+                            <b-menu-item icon="cellphone-link">
+                                <template #label>
+                                    Devices
+                                    <b-dropdown aria-role="list" class="is-pulled-right" position="is-bottom-left">
+                                        <template #trigger>
+                                            <b-icon icon="dots-vertical"></b-icon>
+                                        </template>
+                                        <b-dropdown-item aria-role="listitem">Action</b-dropdown-item>
+                                        <b-dropdown-item aria-role="listitem">Another action</b-dropdown-item>
+                                        <b-dropdown-item aria-role="listitem">Something else</b-dropdown-item>
+                                    </b-dropdown>
+                                </template>
+                            </b-menu-item>
+                            <b-menu-item icon="cash-multiple" label="Payments" disabled></b-menu-item>
+                        </b-menu-item>
+                        <b-menu-item icon="account" label="My Account">
+                            <b-menu-item label="Account data"></b-menu-item>
+                            <b-menu-item label="Addresses"></b-menu-item>
+                        </b-menu-item>
+                    </b-menu-list>
+                    <b-menu-list label="Actions">
+                        <b-menu-item label="Logout"></b-menu-item>
+                    </b-menu-list>
+                </b-menu>
+            </template>
+<!--            <div th:replace="fragments/header"></div>-->
+            <div th:replace="${content}"></div>
+<!--            <div th:replace="fragments/footer"></div>-->
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+        <script src="js/vue.js"></script>
+        <script src="https://unpkg.com/buefy/dist/buefy.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>
