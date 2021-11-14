@@ -5,111 +5,67 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://unpkg.com/buefy/dist/buefy.min.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@5.8.55/css/materialdesignicons.min.css">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
-        <link rel="stylesheet" href="css/typed_text.css">
-        <link rel="stylesheet" href="css/admin.css">
+        <link rel="stylesheet" href="../css/typed_text.css">
+        <link rel="stylesheet" href="../css/admin.css">
       <title>Admin</title>
     </head>
     <body>
         <div id="app">
             <div>
-                <nav class="main-menu">
+                <nav class="main-menu" style="z-index: 2">
                     <div class="logo"></div>
                     <div class="settings"></div>
                     <ul>
                         <li>
                             <a href="#">
-                                <i class="fa fa-home fa-lg"></i>
+                                <i class="mdi mdi-home mdi-36px fa-lg"></i>
                                 <span class="nav-text">Home</span>
                             </a>
                         </li>
                         <li class="has-subnav">
-                            <a href="#">
-                                <i class="fa fa-clock-o fa-lg"></i>
-                                <span class="nav-text">Magna</span>
+                            <a href="/admin/projects">
+                                <i class="mdi mdi-folder mdi-36px fa-lg"></i>
+                                <span class="nav-text">Проекты</span>
                             </a>
                         </li>
                         <li>
                             <a href="#">
-                                <i class="fa fa-desktop fa-lg"></i>
-                                <span class="nav-text">Senectus</span>
-                            </a>
-                        </li>
-                        <li class="has-subnav">
-                            <a href="#">
-                                <i class="fa fa-plane fa-lg"></i>
-                                <span class="nav-text">Fusce</span>
+                                <i class="mdi mdi-folder-plus mdi-36px fa-lg"></i>
+                                <span class="nav-text">Добавить проект</span>
                             </a>
                         </li>
                         <li>
                             <a href="#">
-                                <i class="fa fa-shopping-cart"></i>
-                                <span class="nav-text">Etiam</span>
+                                <i class="mdi mdi-alien mdi-36px fa-lg"></i>
+                                <span class="nav-text">Технологии</span>
                             </a>
                         </li>
                         <li>
                             <a href="#">
-                                <i class="fa fa-microphone fa-lg"></i>
-                                <span class="nav-text">Lorem & Ipsum</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="fa fa-flask fa-lg"></i>
-                                <span class="nav-text">Quisque</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="fa fa-picture-o fa-lg"></i>
-                                <span class="nav-text">Vestibulum</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="fa fa-align-left fa-lg"></i>
-                                <span class="nav-text">Sodales</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="fa fa-gamepad fa-lg"></i>
-                                <span class="nav-text">Proin</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="fa fa-glass fa-lg"></i>
-                                <span class="nav-text">Non-Lorem Vehicula</span>
-                            </a>
-                        </li>
-                        <li class="has-subnav">
-                            <a href="#">
-                                <i class="fa fa-rocket fa-lg"></i>
-                                <span class="nav-text">Porta</span>
+                                <i class="mdi mdi-cog mdi-36px fa-lg"></i>
+                                <span class="nav-text">Найстройки</span>
                             </a>
                         </li>
                     </ul>
                     <ul class="logout">
                         <li>
                             <a href="#">
-                                <i class="fa fa-lightbulb-o fa-lg"></i>
-                                <span class="nav-text">Logout</span>
+                                <i class="mdi mdi-arrow-bottom-left mdi-36px fa-lg"></i>
+                                <span class="nav-text">Назад на главную</span>
                             </a>
                         </li>
                     </ul>
                 </nav>
             </div>
-            <div style="position: relative; left: 60px; z-index: -1">
-                <!--            <div th:replace="fragments/header"></div>-->
+
+            <div style="width: calc(100% - 60px); position: relative; left: 60px; z-index: 1">
                 <div th:replace="${content}"></div>
-                <!--            <div th:replace="fragments/footer"></div>-->
             </div>
         </div>
 
+        <script src="../js/vue.js"></script>
         <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-        <script src="js/vue.js"></script>
         <script src="https://unpkg.com/buefy/dist/buefy.min.js"></script>
-        <script src="js/admin.js"></script>
+        <script src="../js/admin.js"></script>
     </body>
 </html>
