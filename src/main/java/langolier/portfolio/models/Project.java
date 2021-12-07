@@ -1,9 +1,9 @@
 package langolier.portfolio.models;
 
 import langolier.portfolio.models.helpers.Status;
-import org.springframework.beans.factory.annotation.Value;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.List;
 
 @Entity
@@ -16,6 +16,7 @@ public class Project {
     private String photoUrl;
     private String name;
     private String description;
+    private LocalDate created_at;
 
     @ElementCollection
     private List<String> listAnotherPhotos;
@@ -33,6 +34,7 @@ public class Project {
         this.description = description;
         this.listAnotherPhotos = listAnotherPhotos;
         this.technologies = technologies;
+        this.created_at = LocalDate.now();
     }
 
     public void setId(Long id) {
@@ -89,5 +91,13 @@ public class Project {
 
     public void setTechnologies(List<Technology> technologies) {
         this.technologies = technologies;
+    }
+
+    public LocalDate getCreated_at() {
+        return created_at;
+    }
+
+    public void setCreated_at(LocalDate created_at) {
+        this.created_at = created_at;
     }
 }

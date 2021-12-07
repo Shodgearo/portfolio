@@ -7,7 +7,33 @@
     <body>
         <div class="container">
             <template>
-                <b-table :data="data" :columns="columns"></b-table>
+                <section>
+                    <b-table :data="tableDataSimple">
+                        <b-table-column label="ID" width="40" numeric v-slot="props">
+                            {{ props.row.id }}
+                        </b-table-column>
+
+                        <b-table-column label="Name" v-slot="props">
+                            {{ props.row.name }}
+                        </b-table-column>
+
+                        <b-table-column label="Status" v-slot="props">
+                            {{ props.row.status }}
+                        </b-table-column>
+
+                        <b-table-column label="Date" centered v-slot="props">
+                            {{ props.row.created_at }}
+                        </b-table-column>
+
+                        <b-table-column width="100" v-slot="props">
+                            <b-button type="is-success">Edit</b-button>
+                        </b-table-column>
+
+                        <b-table-column width="100" v-slot="props">
+                            <b-button type="is-danger">Delete</b-button>
+                        </b-table-column>
+                    </b-table>
+                </section>
             </template>
         </div>
     </body>
