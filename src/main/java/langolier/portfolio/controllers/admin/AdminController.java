@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -35,17 +36,17 @@ public class AdminController {
 
     @GetMapping("/projects/all")
     @ResponseBody
-    public Map<String, String>[] getAllProjects() {
+    public List<Map<String, String>> getAllProjects() {
+        List<Map<String, String>> result = new ArrayList<>();
         List<Project> projects = (List<Project>) projectRepo.findAll();
-        Map<String, String>[] result = new HashMap[projects.size()];
 
-        for (int i = 0; i < projects.size(); i++) {
-            result[i] = new HashMap<>();
-
-            result[i].put("id", String.valueOf(projects.get(i).getId()));
-            result[i].put("name", String.valueOf(projects.get(i).getName()));
-            result[i].put("status", String.valueOf(projects.get(i).getStatus()));
-            result[i].put("created_at", String.valueOf(projects.get(i).getCreated_at()));
+        for (Project project : projects) {
+            result.add(new HashMap<>() {{
+                put("id", project.getId().toString());
+                put("name", project.getName());
+                put("status", project.getStatus().toString());
+                put("created_at", project.getCreated_at().toString());
+            }});
         }
 
         return result;
