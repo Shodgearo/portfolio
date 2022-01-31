@@ -49,7 +49,7 @@ public class AdminProjectsController {
         return "/admin/projects/edit";
     }
 
-    @GetMapping("/{id}/edit")
+    @GetMapping("/{id}")
     @ResponseBody
     public Map<String, String> getProject(@PathVariable Long id) {
         Project project = projectRepo.findById(id).get();

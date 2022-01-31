@@ -26,7 +26,8 @@
                         </b-table-column>
 
                         <b-table-column width="100" v-slot="props">
-                            <b-button type="is-success"><a href="/admin/projects/edit">Edit</a></b-button>
+                            <b-button type="is-success"><a :href="`/admin/projects/${props.row.id}/edit`">Редакт.</a></b-button>
+<!--                            <b-button type="is-success"><a href="/admin/projects/props.row.id/edit">Редакт.</a></b-button>-->
                         </b-table-column>
 
                         <b-table-column width="100" v-slot="props">
